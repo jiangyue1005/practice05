@@ -2,28 +2,32 @@ package omikuji;
 
 /**
  * おみくじ抽象クラス
- * 
- * @author y_jiang
- *
+ * @author e_kou
  */
 public abstract class Omikuji implements Fortune {
 
 	/** 運勢 */
 	protected String unsei;
 	/** おみくじコード */
-	protected String omikujicd;
+	protected String omikujiCode;
 	/** 運勢コード */
-	protected String unseicd;
+	protected String unseiCode;
 	/** 願い事 */
 	protected String negaigoto;
 	/** 商い */
 	protected String akinai;
 	/** 学問 */
 	protected String gakumon;
+	/** 占い日 */
+	protected String uranaiDate;
+
+	/**
+	 * 運勢の抽象メソッド
+	 */
+	public abstract void setUnsei();
 
 	/**
 	 * 運勢結果の表示内容
-	 * 
 	 * @return 運勢結果
 	 */
 	public String disp() {
@@ -32,7 +36,6 @@ public abstract class Omikuji implements Fortune {
 
 	/**
 	 * 運勢を取得する
-	 * 
 	 * @return 運勢
 	 */
 	public String getUnsei() {
@@ -40,49 +43,39 @@ public abstract class Omikuji implements Fortune {
 	}
 
 	/**
-	 * 運勢の抽象メソッド
-	 */
-	public abstract void setUnsei();
-
-	/**
 	 * おみくじコードを取得する
-	 * 
 	 * @return おみくじコード
 	 */
-	public String getOmikujicd() {
-		return omikujicd;
+	public String getOmikujiCode() {
+		return omikujiCode;
 	}
 
 	/**
 	 * おみくじコードを設定する
-	 * 
-	 * @param omikujicd おみくじコード
+	 * @param omikujiCode おみくじコード
 	 */
-	public void setOmikujicd(String omikujicd) {
-		this.omikujicd = omikujicd;
+	public void setOmikujiCode(String omikujiCode) {
+		this.omikujiCode = omikujiCode;
 	}
 
 	/**
 	 * 運勢コードを取得する
-	 * 
 	 * @return 運勢コード
 	 */
-	public String getUnseicd() {
-		return unseicd;
+	public String getUnseiCode() {
+		return unseiCode;
 	}
 
 	/**
 	 * 運勢コードを設定する
-	 * 
-	 * @param unseicd 運勢コード
+	 * @param unseiCode 運勢コード
 	 */
-	public void setUnseicd(String unseicd) {
-		this.unseicd = unseicd;
+	public void setUnseiCode(String unseiCode) {
+		this.unseiCode = unseiCode;
 	}
 
 	/**
 	 * 願い事を取得する
-	 * 
 	 * @return 願い事
 	 */
 	public String getNegaigoto() {
@@ -91,7 +84,6 @@ public abstract class Omikuji implements Fortune {
 
 	/**
 	 * 願い事を設定する
-	 * 
 	 * @param negaigoto 願い事
 	 */
 	public void setNegaigoto(String negaigoto) {
@@ -100,7 +92,6 @@ public abstract class Omikuji implements Fortune {
 
 	/**
 	 * 商いを取得する
-	 * 
 	 * @return 商い
 	 */
 	public String getAkinai() {
@@ -109,7 +100,6 @@ public abstract class Omikuji implements Fortune {
 
 	/**
 	 * 商いを設定する
-	 * 
 	 * @param akinai 商い
 	 */
 	public void setAkinai(String akinai) {
@@ -118,7 +108,6 @@ public abstract class Omikuji implements Fortune {
 
 	/**
 	 * 学問を取得する
-	 * 
 	 * @return 学問
 	 */
 	public String getGakumon() {
@@ -127,11 +116,26 @@ public abstract class Omikuji implements Fortune {
 
 	/**
 	 * 学問を設定する
-	 * 
 	 * @param gakumon 学問
 	 */
 	public void setGakumon(String gakumon) {
 		this.gakumon = gakumon;
+	}
+	
+	/**
+	 * 占い日付を取得する
+	 * @return 占い日付
+	 */
+	public String getUranaiDate() {
+		return uranaiDate;
+	}
+
+	/**
+	 * 占い日付を設定する
+	 * @param gakumon 占い日付
+	 */
+	public void setUranaiDate(String uranaiDate) {
+		this.uranaiDate = uranaiDate;
 	}
 
 }

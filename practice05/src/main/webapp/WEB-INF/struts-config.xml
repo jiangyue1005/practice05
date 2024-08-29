@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
     Licensed to the Apache Software Foundation (ASF) under one or more
     contributor license agreements.  See the NOTICE file distributed with
@@ -15,10 +15,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
-<!DOCTYPE struts-config PUBLIC
-          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
-          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 
 <!--
      This is a blank Struts configuration file with an example
@@ -37,19 +34,19 @@
 <struts-config>
 
 
-<!-- ================================================ Form Bean Definitions -->
+	<!-- ================================================ Form Bean Definitions -->
 
-    <form-beans>
-    <!-- sample form bean descriptor for an ActionForm
+	<form-beans>
+		<!-- sample form bean descriptor for an ActionForm
         <form-bean
             name="inputForm"
             type="app.InputForm"/>
     end sample -->
-    <form-bean 
-    		name="BirthdayForm" 
-    		type = "form.BirthdayForm"/>
+		<form-bean
+			name="BirthdayForm"
+			type="form.BirthdayForm" />
 
-    <!-- sample form bean descriptor for a DynaActionForm
+		<!-- sample form bean descriptor for a DynaActionForm
         <form-bean
             name="logonForm"
             type="org.apache.struts.action.DynaActionForm">
@@ -61,48 +58,48 @@
                 type="java.lang.String"/>
        </form-bean>
     end sample -->
-    </form-beans>
-    
+	</form-beans>
 
-<!-- ========================================= Global Exception Definitions -->
 
-    <global-exceptions>
-        <!-- sample exception handler
+	<!-- ========================================= Global Exception Definitions -->
+
+	<!-- <global-exceptions>-->
+		<!-- sample exception handler
         <exception
             key="expired.password"
             type="app.ExpiredPasswordException"
             path="/changePassword.jsp"/>
         end sample -->
-    </global-exceptions>
+	<!-- </global-exceptions>-->
 
 
-<!-- =========================================== Global Forward Definitions -->
+	<!-- =========================================== Global Forward Definitions -->
 
-   
-        <!-- <forward
+
+	<!-- <forward
             name="welcome"
             path="/Welcome.do"/>-->
-    
-     <global-forwards> 
-        <!-- Default forward to "Welcome" action -->
-        <!-- Demonstrates using index.jsp to forward -->
-         <forward
-            name="fail"
-            path="/index.jsp"/>
-         
-    </global-forwards>
+
+	<global-forwards>
+		<!-- Default forward to "Welcome" action -->
+		<!-- Demonstrates using index.jsp to forward -->
+		<forward
+			name="fail"
+			path="/index.jsp" />
+
+	</global-forwards>
 
 
-<!-- =========================================== Action Mapping Definitions -->
+	<!-- =========================================== Action Mapping Definitions -->
 
-    <action-mappings>
-            <!-- Default "Welcome" action -->
-            <!-- Forwards to Welcome.jsp -->
-       <!--  <action
+	<action-mappings>
+		<!-- Default "Welcome" action -->
+		<!-- Forwards to Welcome.jsp -->
+		<!--  <action
             path="/Welcome"
             forward="/pages/Welcome.jsp"/>-->
 
-    <!-- sample input and input submit actions
+		<!-- sample input and input submit actions
 
         <action
             path="/Input"
@@ -126,28 +123,53 @@
                 input="/pages/Edit{1}.jsp"/>
 
     end samples -->
-    
-    <action
-         	path = "/BirthdayAction"
-         	type = "action.BirthdayAction"
-         	name = "BirthdayForm"
-         	scope = "request"
-         	validate = "true"
-         	input = "/index.jsp">
-        <forward name = "success" path = "/jsp/result.jsp"/>
+
+		<action
+			path="/BirthdayAction"
+			type="action.BirthdayAction"
+			name="BirthdayForm"
+			scope="request"
+			validate="true"
+			input="/index.jsp">
+			<forward name="success" path="/jsp/result.jsp" />
+		</action>
+		
+		<action
+			path="/ReturnAction"
+			type="action.ReturnAction">
+			<forward name="success" path="/index.jsp" />
+		</action>
+		
+		<action 
+       		path = "/OmikujiRatioAction"
+       		type = "action.OmikujiRatioAction"
+       		name = "RatioForm"
+       		scope = "request"
+       		validate = "false">
+       	<forward name = "success" path = "/jsp/omikujiRatio.jsp" />
        	</action>
-    </action-mappings>
+       	
+       	<action 
+       		path = "/HalfYearResultAction"
+       		type = "action.HalfYearResultAction"
+       		name = "HalfYearResultForm"
+       		scope = "request"
+       		validate = "false">
+       	<forward name = "success" path = "/jsp/halfYearResult.jsp" />
+       	</action>
+       	
+	</action-mappings>
 
 
-<!-- ======================================== Message Resources Definitions -->
+	<!-- ======================================== Message Resources Definitions -->
 
-    <message-resources parameter="MessageResources" />
+	<message-resources parameter="MessageResources" />
 
 
-<!-- =============================================== Plug Ins Configuration -->
+	<!-- =============================================== Plug Ins Configuration -->
 
-  <!-- ======================================================= Tiles plugin -->
-  <!--
+	<!-- ======================================================= Tiles plugin -->
+	<!--
      This plugin initialize Tiles definition factory. This later can takes some
 	 parameters explained here after. The plugin first read parameters from
 	 web.xml, thenoverload them with parameters defined here. All parameters
@@ -182,17 +204,17 @@
                        value="/WEB-INF/tiles-defs.xml" />
       <set-property property="moduleAware" value="true" />
     </plug-in>
-  -->  
+  -->
 
 
-  <!-- =================================================== Validator plugin -->
+	<!-- =================================================== Validator plugin -->
 
-  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
-    <set-property
-        property="pathnames"
-        value="/org/apache/struts/validator/validator-rules.xml,
-               /WEB-INF/validation.xml"/>
-  </plug-in>
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property
+			property="pathnames"
+			value="/org/apache/struts/validator/validator-rules.xml,
+               /WEB-INF/validation.xml" />
+	</plug-in>
 
 </struts-config>
 

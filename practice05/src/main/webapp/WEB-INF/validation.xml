@@ -37,9 +37,9 @@
 
     </global>
 
-    <formset>
+<!--     <formset>
 
-        <!-- An example form -->
+        An example form
         <form name="logonForm">
             <field
                 property="username"
@@ -57,17 +57,17 @@
             </field>
         </form>
 
-    </formset>
+    </formset> -->
 
     <!-- An example formset for another locale -->
-    <formset language="fr">
+<!--     <formset language="fr">
 
         <constant>
             <constant-name>postalCode</constant-name>
             <constant-value>^[0-9a-zA-Z]*$</constant-value>
         </constant>
 
-        <!-- An example form -->
+        An example form
         <form name="logonForm">
             <field
                 property="username"
@@ -85,6 +85,24 @@
             </field>
         </form>
 
-   </formset>
+   </formset> -->
+   
+	<formset>
+		<form name="BirthdayForm">
+			<field property="birthday" depends="required,date,mask">
+				  <msg name="required" key="birthday.required" />
+				  <msg name="date" key="birthday.date" />
+				  <msg name="mask" key="birthday.mask" />
+					<var>
+						<var-name>datePattern</var-name>
+						<var-value>yyyyMMdd</var-value>
+					</var>
+					<var>
+						<var-name>mask</var-name>
+						<var-value>^[0-9]{4}[0-9]{2}[0-9]{2}$</var-value>
+					</var>
+			</field>
+		</form>
+	</formset>
 
 </form-validation>

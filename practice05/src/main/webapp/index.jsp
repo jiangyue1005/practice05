@@ -16,7 +16,7 @@ form {
 }
 
 </style>
-	<title>🔯占い🔯</title>
+	<title>⛩️占い⛩️</title>
 	</head>
 	<font color="red"><html:errors/></font>
 		<body>
@@ -24,9 +24,9 @@ form {
 			🌸本日の運勢を占いしましょう🌸
 			<br>
 			<br>
-				誕生日を入力してください（例:20000101）：
+				誕生日を入力してください（例:20240101）：
 				<br> <html:text styleClass = "birthday" property = "birthday" />
-				<br> <html:submit styleClass = "success" property = "submit" value = "おみくじ引く　" />
+				<br> <html:submit styleClass = "success" property = "submit" value = "おみくじを引く" />
 			</html:form>
 	</form>
 		</body>
